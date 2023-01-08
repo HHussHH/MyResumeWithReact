@@ -1,0 +1,35 @@
+.portfolio{
+    width: 100%;
+    background-color: #F6F6F6;
+    height: auto;
+    text-align: center;
+    &__title{
+        padding-top: 100px;
+        margin-bottom: 50px;
+    }
+    &__img{
+        margin-bottom: 45px;
+    }
+    &__link{
+        font-weight: 500;
+        font-size: 18px;
+        display: inline-block;
+        color: #000;
+        text-decoration: none;
+        border-bottom: 2px solid #000;
+        margin-bottom: 95px;
+    }
+    &__btn{
+        margin-bottom: 40px;
+        background-color:#000;
+        border: none;
+        border-radius: 20px;
+        cursor: pointer;
+        color:#fff;
+        font-size: 18px;
+        padding: 10px 35px;
+        &:hover{
+            color:rgba(255, 255, 255, 0.8);
+        }
+    }
+}

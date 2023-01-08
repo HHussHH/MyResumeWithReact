@@ -1,0 +1,22 @@
+.about{
+    background-color:#F6F6F6;
+    margin-top: 140px;
+    padding: 20px;
+    text-align: center;
+    &__title{
+        
+       font-weight: 700;
+       font-size: 34px;
+       color: #000; 
+       margin-bottom: 30px;
+    }
+    &__block{
+        margin-bottom: 30px;
+        &__content{
+            font-weight: 400;
+            font-size: 18px;
+            color:#333;
+    }
+    }
+    
+}

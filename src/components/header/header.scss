@@ -1,0 +1,22 @@
+.header__list{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    margin: 0 0 0px;
+    padding: 30px 0;
+    border-bottom: 1.5px solid #828282;
+}
+
+.header__item-link{
+    font-size: 18px;
+    font-weight: 500;
+    color:#828282;
+    text-decoration: none;
+    &-active{
+        color:#000;
+    }
+}
+.header__nav{
+    height: 85px;
+    margin-bottom: 40px;
+}

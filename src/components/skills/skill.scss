@@ -1,0 +1,32 @@
+.skills{
+    margin-top: 110px;
+    text-align: center;
+
+    &__title{
+        font-weight: 700;
+        font-size: 34px;
+        margin-bottom: 60px;
+    }
+    &__info{
+        font-weight: 400;
+        font-size: 18px;
+        margin-bottom: 75px;
+    }
+    &__cards{
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+    }
+    &__cards-img{
+        max-width: 89px;
+        max-height: 89px;
+        margin-bottom: 25px;
+    }
+    &__cards-title{
+        margin-bottom: 30px;
+        font-weight: 700;
+        font-size: 14px;
+        color:#828282;
+    }
+    
+}
