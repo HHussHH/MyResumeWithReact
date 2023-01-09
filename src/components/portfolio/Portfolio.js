@@ -1,35 +1,38 @@
 import "./portfolio.scss"
 
-import firstPortfolio from "../../img/portfolio/p1.png";
-import secondPortfolio from "../../img/portfolio/p2.png";
-import ThreePortfolio from "../../img/portfolio/p3.png";
+import portfolio from "../../img/portfolio/portfolio.jpg";
+import ComicsPortfolio from "../../img/portfolio/Marvel.jpg";
+import JobTodoApp from "../../img/portfolio/JobTodoApp.jpg";
+import freelance from "../../img/portfolio/freelance.jpg";
+import Todo from "../../img/portfolio/Todo.jpg";
+import SporFit from "../../img/portfolio/SporFit.jpg";
 import { useEffect, useState } from "react";
 import LoadingButton from "../loadingBtn/LoadingButton";
 
 const portfolioData = [
     {
-        img: firstPortfolio,
-        link: "https://github.com/",
+        img: ComicsPortfolio,
+        link: "https://github.com/HHussHH/Marvel-Info-portal_React",
     },
     {
-        img: secondPortfolio,
-        link: "https://github.com/",
+        img: JobTodoApp,
+        link: "https://github.com/HHussHH/Employee-Accounting_React",
     },
     {
-        img: ThreePortfolio,
-        link: "https://github.com/",
+        img: freelance,
+        link: "https://github.com/HHussHH/freelance_portfolio-React",
     },
     {
-        img: firstPortfolio,
-        link: "https://github.com/",
+        img: Todo,
+        link: "https://github.com/HHussHH/Todo-app_React",
     },
     {
-        img: secondPortfolio,
-        link: "https://github.com/",
+        img: SporFit,
+        link: "https://github.com/HHussHH/Proper-nutrition-store",
     },
     {
-        img: ThreePortfolio,
-        link: "https://github.com/",
+        img: portfolio,
+        link: "https://github.com/HHussHH/portfolio-react",
     },
 ]
 
@@ -75,7 +78,7 @@ const Portfolio = ({ currentLang }) => {
                     {count >= cards.length - 1
                         ? <div className="portfolio__end"
                             title={currentLang === "ru" ? "Нажмите для скрытия работ" : "Click to close works"}
-                            onClick={() => setCount(2)}>{currentLang === "ru" ? "Загрузить еще..." : "Loading more..."}</div> :
+                            onClick={() => setCount(2)}>{currentLang === "ru" ? "Нажмите для скрытия работ" : "Click to close works"}</div> :
                         <LoadingButton
                             setText={currentLang === "ru" ? "Загрузить еще..." : "Loading more..."}
                             setClick={() => setCount(count => count + 1)} />}

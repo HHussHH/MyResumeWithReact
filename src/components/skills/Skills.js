@@ -4,6 +4,11 @@ import reactImg from "../../img/cards/react.png"
 import htmlImg from "../../img/cards/html.png"
 import jsImg from "../../img/cards/js.png"
 import cssImg from "../../img/cards/css.png"
+import gitImg from "../../img/cards/git.png"
+import reduxImg from "../../img/cards/redux.png"
+import figmaImg from "../../img/cards/figma.png"
+import nodeImg from "../../img/cards/node.png"
+import bootstrapImg from "../../img/cards/bootstrap.png"
 
 
 import ThreeStars from "../../img/cards/3starts.png"
@@ -35,23 +40,28 @@ const cardData = [
         title: "CSS/SCSS/LESS",
         raiting: raitingData[2],
     }, {
-        img: jsImg,
-        title: "JavaScript",
+        img: gitImg,
+        title: "GitHub",
         raiting: raitingData[2],
     },
     {
-        img: reactImg,
-        title: "React",
+        img: figmaImg,
+        title: "Figma",
         raiting: raitingData[2],
     },
     {
-        img: htmlImg,
-        title: "HTML",
+        img: nodeImg,
+        title: "NodeJs",
         raiting: raitingData[0],
     },
     {
-        img: cssImg,
-        title: "CSS/SCSS/LESS",
+        img: reduxImg,
+        title: "Redux",
+        raiting: raitingData[1],
+    },
+    {
+        img: bootstrapImg,
+        title: "Bootstrap",
         raiting: raitingData[1],
     },
 ]

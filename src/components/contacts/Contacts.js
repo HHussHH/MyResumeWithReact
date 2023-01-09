@@ -19,10 +19,10 @@ const Contacts = ({ currentLang }) => {
                     {content[1]}</p>
                 <button className="contacts__btn">{btn}</button>
                 <div className="contacts__icons">
-                    <div className="contacts__icon"><BsTelegram size={40} /></div>
-                    <div className="contacts__icon"><AiFillGithub size={40} /></div>
-                    <div className="contacts__icon"><SlSocialVkontakte size={40} /></div>
-                    <div className="contacts__icon"><BsInstagram size={40} /></div>
+                    <a href="https://t.me/Shikarnui_Chelovek" rel="noreferrer" target="_blank" className="contacts__icon"><BsTelegram size={40} /></a>
+                    <a href="https://github.com/HHussHH" rel="noreferrer" target="_blank" className="contacts__icon"><AiFillGithub size={40} /></a>
+                    <a href="https://vk.com/top_sportorg" rel="noreferrer" target="_blank" className="contacts__icon"><SlSocialVkontakte size={40} /></a>
+                    <a href="https://instagram.com" rel="noreferrer" target="_blank" className="contacts__icon"><BsInstagram size={40} /></a>
 
                 </div>
                 <div className="contacts__under-text">{underText}</div>
