@@ -35,7 +35,10 @@ const portfolioData = [
 
 
 
-const Portfolio = () => {
+const Portfolio = ({ currentLang }) => {
+
+    const title = currentLang === "ru" ? "Портфолио" : "Portfolio"
+    const link = currentLang === "ru" ? "Открыть этот проект" : "Open this project"
 
     const [cards, setCard] = useState([])
     const [count, setCount] = useState(2)
@@ -48,7 +51,7 @@ const Portfolio = () => {
                         <div>
                             <img className="portfolio__img" src={card.img} alt={card.img} />
                         </div>
-                        <a className="portfolio__link" href={card.link} rel="noreferrer" target="_blank" key={id}>Open this project</a>
+                        <a className="portfolio__link" href={card.link} rel="noreferrer" target="_blank" key={id}>{link}</a>
                     </div>
                 )
             }
@@ -65,15 +68,17 @@ const Portfolio = () => {
     return (
         <div className="portfolio">
             <div className="container">
-                <h2 className="portfolio__title">Portfolio</h2>
+                <h2 className="portfolio__title">{title}</h2>
                 <div className="portfolio__inner">
                     {cardCreate()}
                     {/* <button className="portfolio__btn" onClick={() => setCount(count => count + 1)}>Loading more...</button> */}
                     {count >= cards.length - 1
                         ? <div className="portfolio__end"
-                            title="Нажмите для скрытия работ"
-                            onClick={() => setCount(2)}>Конец списка работ</div> :
-                        <LoadingButton setText="Loading more..." setClick={() => setCount(count => count + 1)} />}
+                            title={currentLang === "ru" ? "Нажмите для скрытия работ" : "Click to close works"}
+                            onClick={() => setCount(2)}>{currentLang === "ru" ? "Загрузить еще..." : "Loading more..."}</div> :
+                        <LoadingButton
+                            setText={currentLang === "ru" ? "Загрузить еще..." : "Loading more..."}
+                            setClick={() => setCount(count => count + 1)} />}
                 </div>
             </div>
         </div>

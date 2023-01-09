@@ -57,7 +57,10 @@ const cardData = [
 ]
 
 
-const Skills = () => {
+const Skills = ({ currentLang }) => {
+
+    const title = currentLang === "ru" ? "Навыки" : "Skills"
+    const info = currentLang === "ru" ? "Работал с этими технологиями" : "I work in such programs as"
     const [skillCard, setSkillCard] = useState([])
     const [coutSkillCard, setCoutSkillCard] = useState(3)
 
@@ -84,19 +87,22 @@ const Skills = () => {
 
     useEffect(() => {
         setSkillCard([...cardData])
-    }, [skillCard])
+    }, [])
 
     return (
         <div className="skills">
             <div className="container">
                 <div className="skills__inner">
-                    <h2 className="skills__title">Skills</h2>
-                    <h4 className="skills__info">I work in such programs as</h4>
+                    <h2 className="skills__title">{title}</h2>
+                    <h4 className="skills__info">{info}</h4>
                     {cardsAll()}
                     {coutSkillCard >= skillCard.length - 1
                         ? <div className="portfolio__end"
-                            title="Нажмите для скрытия навыков"
-                            onClick={() => setCoutSkillCard(3)}>Конец списка работ</div> : <LoadingButton setText="Loading more..." setClick={() => setCoutSkillCard(count => count + 4)} />}
+                            title={currentLang === "ru" ? "Нажмите для закрытия навыков" : "Click to close skills"}
+                            onClick={() => setCoutSkillCard(3)}>{currentLang === "ru" ? "Конец списка навыков" : "End of skill list"}</div> :
+                        <LoadingButton
+                            setText={currentLang === "ru" ? "Загрузить еще..." : "Loading more..."}
+                            setClick={() => setCoutSkillCard(count => count + 4)} />}
                 </div>
             </div>
         </div>

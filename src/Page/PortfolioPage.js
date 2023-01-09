@@ -1,5 +1,5 @@
 import Portfolio from "../components/portfolio/Portfolio";
 
-const PortfolioPage = () => <Portfolio />
+const PortfolioPage = ({ currentLang }) => <Portfolio currentLang={currentLang} />
 
 export default PortfolioPage
