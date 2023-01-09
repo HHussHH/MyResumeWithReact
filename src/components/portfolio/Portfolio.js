@@ -4,6 +4,7 @@ import firstPortfolio from "../../img/portfolio/p1.png";
 import secondPortfolio from "../../img/portfolio/p2.png";
 import ThreePortfolio from "../../img/portfolio/p3.png";
 import { useEffect, useState } from "react";
+import LoadingButton from "../loadingBtn/LoadingButton";
 
 const portfolioData = [
     {
@@ -67,7 +68,12 @@ const Portfolio = () => {
                 <h2 className="portfolio__title">Portfolio</h2>
                 <div className="portfolio__inner">
                     {cardCreate()}
-                    <button className="portfolio__btn" onClick={() => setCount(count => count + 2)}>Loading more...</button>
+                    {/* <button className="portfolio__btn" onClick={() => setCount(count => count + 1)}>Loading more...</button> */}
+                    {count >= cards.length - 1
+                        ? <div className="portfolio__end"
+                            title="Нажмите для скрытия работ"
+                            onClick={() => setCount(2)}>Конец списка работ</div> :
+                        <LoadingButton setText="Loading more..." setClick={() => setCount(count => count + 1)} />}
                 </div>
             </div>
         </div>

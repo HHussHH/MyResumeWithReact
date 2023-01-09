@@ -19,6 +19,12 @@
         border-bottom: 2px solid #000;
         margin-bottom: 95px;
     }
+    &__end{
+        font-weight: 600;
+        font-size: 18px;
+        padding-bottom: 45px;
+        cursor: pointer;
+    }
     &__btn{
         margin-bottom: 40px;
         background-color:#000;

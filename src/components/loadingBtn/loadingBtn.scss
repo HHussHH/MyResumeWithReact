@@ -1,0 +1,13 @@
+.loading__btn{
+    margin-bottom: 40px;
+    background-color:#000;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color:#fff;
+    font-size: 18px;
+    padding: 10px 35px;
+    &:hover{
+        color:rgba(255, 255, 255, 0.8);
+    }
+}

@@ -16,6 +16,11 @@
         display: flex;
         text-align: center;
         justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    &__card{
+        width: 25%;
+        margin-bottom: 65px;
     }
     &__cards-img{
         max-width: 89px;
