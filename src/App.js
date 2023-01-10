@@ -25,11 +25,29 @@ function App() {
         <Header currentLang={lang} />
         < BurgerMenu setMenu={setMenu} menu={menu} />
         <Routes>
-          <Route path="/" element={menu ? <Menu setMenu={setMenu} /> : <Home setLang={setLang} currentLang={lang} />} />
-          <Route path="/about" element={menu ? <Menu setMenu={setMenu} /> : <About currentLang={lang} />} />
-          <Route path="/skills" element={menu ? <Menu setMenu={setMenu} /> : <SkillPage currentLang={lang} />} />
-          <Route path="/portfolio" element={menu ? <Menu setMenu={setMenu} /> : <PortfolioPage currentLang={lang} />} />
-          <Route path="/contacts" element={menu ? <Menu setMenu={setMenu} /> : <ContactsPage currentLang={lang} />} />
+          <Route path="/"
+            element={menu ? <Menu setMenu={setMenu} currentLang={lang} setLang={setLang} />
+              : <Home setLang={setLang} currentLang={lang} />} />
+
+
+          <Route path="/about"
+            element={menu ? <Menu setMenu={setMenu} currentLang={lang} setLang={setLang} />
+              : <About currentLang={lang} />} />
+
+
+          <Route path="/skills"
+            element={menu ? <Menu setMenu={setMenu} currentLang={lang} setLang={setLang} />
+              : <SkillPage currentLang={lang} />} />
+
+
+          <Route path="/portfolio"
+            element={menu ? <Menu setMenu={setMenu} currentLang={lang} setLang={setLang} />
+              : <PortfolioPage currentLang={lang} />} />
+
+
+          <Route path="/contacts"
+            element={menu ? <Menu setMenu={setMenu} currentLang={lang} setLang={setLang} />
+              : <ContactsPage currentLang={lang} />} />
         </Routes>
       </Router>
     </div>

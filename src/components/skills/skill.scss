@@ -35,3 +35,31 @@
     }
     
 }
+
+@media (max-width: 749px){
+    .skills{
+        &__card{
+            width: 33%;
+            margin-bottom: 65px;
+        }
+    }
+}
+
+
+@media (max-width: 600px){
+    .skills{
+        &__card{
+            width: 50%;
+            margin-bottom: 65px;
+        }
+    }
+}
+
+@media (max-width: 350px){
+    .skills{
+        &__card{
+            width: 100%;
+            margin-bottom: 65px;
+        }
+    }
+}
