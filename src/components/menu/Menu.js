@@ -51,11 +51,13 @@ const menuDataRu = [
 
 
 const Menu = ({ setMenu, currentLang, setLang }) => {
+
+    const lang = currentLang === "eng" ? [...menuDataEng] : [...menuDataRu]
     const createMenuItemEng = () => {
 
-        const item = menuDataEng.map((item, id) => {
+        const item = lang.map((item, id) => {
             return (
-                <li className="menu__item" id={id}>
+                <li className="menu__item" key={id}>
                     <NavLink to={item.link}
                         className={({ isActive }) => isActive ? activeLink : normalLink}
                         onClick={() => setMenu(false)}>{item.name}</NavLink>

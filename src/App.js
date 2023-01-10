@@ -17,38 +17,50 @@ import './App.css';
 function App() {
   const [lang, setLang] = useState("eng")
   const [menu, setMenu] = useState(false)
-
+  const RoutesData = [
+    {
+      page: <Home setLang={setLang} currentLang={lang} />,
+      link: "/"
+    },
+    {
+      page: <About currentLang={lang} />,
+      link: "/about"
+    },
+    {
+      page: <SkillPage currentLang={lang} />,
+      link: "/skills"
+    },
+    {
+      page: <PortfolioPage currentLang={lang} />,
+      link: "/portfolio"
+    },
+    {
+      page: <ContactsPage currentLang={lang} />,
+      link: "/contacts"
+    },
+  ]
+  const createRoute = () => {
+    const route = RoutesData.map((data, id) => {
+      return (
+        <Route path={data.link}
+          element={menu ? <Menu setMenu={setMenu} currentLang={lang} setLang={setLang} />
+            : data.page}
+          key={id} />
+      )
+    });
+    return (
+      <Routes>
+        {route}
+      </Routes>
+    )
+  }
 
   return (
     <div className="App">
       <Router>
         <Header currentLang={lang} />
         < BurgerMenu setMenu={setMenu} menu={menu} />
-        <Routes>
-          <Route path="/"
-            element={menu ? <Menu setMenu={setMenu} currentLang={lang} setLang={setLang} />
-              : <Home setLang={setLang} currentLang={lang} />} />
-
-
-          <Route path="/about"
-            element={menu ? <Menu setMenu={setMenu} currentLang={lang} setLang={setLang} />
-              : <About currentLang={lang} />} />
-
-
-          <Route path="/skills"
-            element={menu ? <Menu setMenu={setMenu} currentLang={lang} setLang={setLang} />
-              : <SkillPage currentLang={lang} />} />
-
-
-          <Route path="/portfolio"
-            element={menu ? <Menu setMenu={setMenu} currentLang={lang} setLang={setLang} />
-              : <PortfolioPage currentLang={lang} />} />
-
-
-          <Route path="/contacts"
-            element={menu ? <Menu setMenu={setMenu} currentLang={lang} setLang={setLang} />
-              : <ContactsPage currentLang={lang} />} />
-        </Routes>
+        {createRoute()}
       </Router>
     </div>
   );
