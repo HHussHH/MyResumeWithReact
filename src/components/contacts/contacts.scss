@@ -49,3 +49,17 @@
     }
 
 }
+
+@media (max-width: 700px){
+    .contacts__btn{
+        margin-bottom: 50px;
+    }
+    .contacts__icon{
+        margin-left: 30px;
+        cursor: pointer;
+        color:#000;
+        &:first-child{
+            margin-left: 0;
+        }
+    }
+}

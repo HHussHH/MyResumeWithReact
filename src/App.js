@@ -10,14 +10,21 @@ import PortfolioPage from "./Page/PortfolioPage";
 
 import './App.css';
 import { useState } from "react";
+import BurgerMenu from "./components/burgerMenu/BurgerMenu";
 
 function App() {
   const [lang, setLang] = useState("eng")
+  const [menu, setMenu] = useState(false)
 
+
+  const isActiveMenu = () => {
+    setMenu(!menu)
+  }
   return (
     <div className="App">
       <Router>
         <Header currentLang={lang} />
+        <BurgerMenu />
         <Routes>
           <Route path="/" element={<Home setLang={setLang} currentLang={lang} />} />
           <Route path="/about" element={<About currentLang={lang} />} />

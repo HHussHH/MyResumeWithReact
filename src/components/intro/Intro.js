@@ -1,5 +1,6 @@
 import "./intro.scss"
 import img from "../../img/bg.png"
+import mobileImg from "../../img/mobileBg.png"
 
 const Intro = ({ setLang, currentLang }) => {
 
@@ -31,6 +32,9 @@ const Intro = ({ setLang, currentLang }) => {
             </div>
             <div className="intro__img">
                 <img src={img} alt="myPhoto" />
+            </div>
+            <div className="intro__Mbimg">
+                <img src={mobileImg} alt="myPhoto" />
             </div>
         </main>
     )

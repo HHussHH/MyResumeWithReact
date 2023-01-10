@@ -20,3 +20,29 @@
     }
     
 }
+
+@media (max-width: 700px){
+    .about{
+        background-color:#F6F6F6;
+        margin-top: 100px;
+        padding: 10px;
+        text-align: center;
+        &__title{
+            
+           font-weight: 700;
+           font-size: 28px;
+           color: #000; 
+           margin-bottom: 20px;
+        }
+        &__block{
+            margin-bottom: 20px;
+            &__content{
+                font-weight: 400;
+                font-size: 14px;
+                color:#333;
+        }
+        }
+        
+    }
+    
+}

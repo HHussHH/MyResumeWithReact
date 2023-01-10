@@ -36,10 +36,44 @@
     
 }
 
-.intro__img{
+.intro__img,
+.intro__Mbimg{
     margin: 30px 0 100px;
     overflow: hidden;
     width: auto;
     height: auto;
 }
 
+.intro__Mbimg{
+    display: none;
+}
+
+@media (max-width: 600px){
+    .intro__Mbimg{
+        display: flex;
+        justify-content: center;
+    }
+    .intro__img{
+        display: none;
+    }
+
+    .intro__title{
+        font-size: 25px;
+    }
+
+
+    .intro__prof{
+        font-size: 14px;
+    }
+
+    .intro__language{
+        display: none;
+        & button{
+            font-size: 14px;
+        }
+    }
+
+    
+    
+    
+}

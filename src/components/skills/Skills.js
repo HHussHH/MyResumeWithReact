@@ -68,7 +68,6 @@ const cardData = [
 
 
 const Skills = ({ currentLang }) => {
-
     const title = currentLang === "ru" ? "Навыки" : "Skills"
     const info = currentLang === "ru" ? "Работал с этими технологиями" : "I work in such programs as"
     const [skillCard, setSkillCard] = useState([])

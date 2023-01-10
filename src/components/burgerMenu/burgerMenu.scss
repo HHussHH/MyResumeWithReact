@@ -1,0 +1,17 @@
+.burgerMenu__btn-systeam{
+ display: none;   
+}
+@media (max-width: 749px){
+    .burgerMenu__btn-systeam{
+    padding: 10px;
+     display: block;
+     display: flex;
+     justify-content: end;
+     align-items: center;
+    }
+
+    .burgerMenu__btn{
+        background: none;
+        border:none
+    }
+   }

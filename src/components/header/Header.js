@@ -1,4 +1,5 @@
 import { NavLink } from "react-router-dom";
+
 import "./header.scss";
 const headerDataEng = [
     {
@@ -74,6 +75,7 @@ const Header = ({ currentLang }) => {
         <nav className="header__nav">
             <div className="container">
                 {headerList()}
+
             </div>
         </nav>
     )
