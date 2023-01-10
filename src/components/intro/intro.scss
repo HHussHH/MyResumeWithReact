@@ -48,7 +48,10 @@
     display: none;
 }
 
-@media (max-width: 600px){
+@media (max-width: 749px){
+    .intro__inner{
+     justify-content: space-around;
+    }
     .intro__Mbimg{
         display: flex;
         justify-content: center;

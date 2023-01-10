@@ -1,0 +1,20 @@
+.menu{
+    display: flex;
+    justify-content: space-around;
+    ul{
+        list-style:none;
+    }
+    &__item{
+        &-link{
+        font-weight: 700;
+        font-size: 34px;
+        color: #828282;
+        text-decoration: none;
+        &-active{
+            color:#000;
+        }
+        }
+        margin-bottom: 50px;
+        
+    }
+}

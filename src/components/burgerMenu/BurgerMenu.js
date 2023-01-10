@@ -1,12 +1,13 @@
 import { HiOutlineMenuAlt3 } from 'react-icons/hi';
 import "./burgerMenu.scss"
 
-const BurgerMenu = () => {
+const BurgerMenu = ({ setMenu, menu }) => {
+
     return (
         <div className="burgerMenu">
             <div className="container">
                 <div className="burgerMenu__btn-systeam">
-                    <button className='burgerMenu__btn'><HiOutlineMenuAlt3 size={40} /></button>
+                    <button className='burgerMenu__btn' onClick={() => setMenu(!menu)}><HiOutlineMenuAlt3 size={40} /></button>
                 </div>
             </div>
         </div>
