@@ -5,7 +5,7 @@ import { AiFillGithub } from 'react-icons/ai';
 import { SlSocialVkontakte } from 'react-icons/sl';
 import { BsInstagram } from 'react-icons/bs';
 const Contacts = ({ currentLang }) => {
-
+    const currentMessage = currentLang === "ru" ? ["Успешно!", "Заявка отправлена!", "success"] : ["Done!", "Message added", "success"]
     const title = currentLang === "ru" ? "Контакты" : "Contacts"
     const content = [
         currentLang === "ru" ? "Хотите узнать больше или просто поболтать?" : "Want to know more or just chat?",
@@ -18,7 +18,7 @@ const Contacts = ({ currentLang }) => {
                 <h2 className="contacts__title">{title}</h2>
                 <p className="contacts__content">{content[0]}<br />
                     {content[1]}</p>
-                <button className="contacts__btn" onClick={() => swal("Успешно!", "Заявка отправлена!", "success")}>{btn}</button>
+                <button className="contacts__btn" onClick={() => swal(...currentMessage)}>{btn}</button>
                 <div className="contacts__icons">
                     <a href="https://t.me/Shikarnui_Chelovek" rel="noreferrer" target="_blank" className="contacts__icon"><BsTelegram size={40} /></a>
                     <a href="https://github.com/HHussHH" rel="noreferrer" target="_blank" className="contacts__icon"><AiFillGithub size={40} /></a>
