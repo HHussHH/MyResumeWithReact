@@ -1,4 +1,5 @@
 import "./contacts.scss"
+import swal from "sweetalert";
 import { BsTelegram } from 'react-icons/bs';
 import { AiFillGithub } from 'react-icons/ai';
 import { SlSocialVkontakte } from 'react-icons/sl';
@@ -17,7 +18,7 @@ const Contacts = ({ currentLang }) => {
                 <h2 className="contacts__title">{title}</h2>
                 <p className="contacts__content">{content[0]}<br />
                     {content[1]}</p>
-                <button className="contacts__btn">{btn}</button>
+                <button className="contacts__btn" onClick={() => swal("Успешно!", "Заявка отправлена!", "success")}>{btn}</button>
                 <div className="contacts__icons">
                     <a href="https://t.me/Shikarnui_Chelovek" rel="noreferrer" target="_blank" className="contacts__icon"><BsTelegram size={40} /></a>
                     <a href="https://github.com/HHussHH" rel="noreferrer" target="_blank" className="contacts__icon"><AiFillGithub size={40} /></a>
@@ -27,7 +28,7 @@ const Contacts = ({ currentLang }) => {
                 </div>
                 <div className="contacts__under-text">{underText}</div>
             </div>
-        </div>
+        </div >
     )
 }
 
