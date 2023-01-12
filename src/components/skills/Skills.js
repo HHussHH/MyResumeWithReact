@@ -15,7 +15,7 @@ import ThreeStars from "../../img/cards/3starts.png"
 import FourStars from "../../img/cards/4starts.png"
 import FiveStars from "../../img/cards/5starts.png"
 import LoadingButton from "../loadingBtn/LoadingButton"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 import Loading from "../loading/Loading"
 
 const raitingData = [ThreeStars, FourStars, FiveStars]
@@ -71,12 +71,13 @@ const cardData = [
 const Skills = ({ currentLang, setLoading, isLoading }) => {
     const title = currentLang === "ru" ? "Навыки" : "Skills"
     const info = currentLang === "ru" ? "Работал с этими технологиями" : "I work in such programs as"
-    const [skillCard, setSkillCard] = useState([])
+    const [currentCountCard, setCurrentCountCard] = useState([...cardData.filter((card, index) => index <= 3)])
     const [coutSkillCard, setCoutSkillCard] = useState(3)
+
 
     const cardsAll = () => {
         // eslint-disable-next-line
-        const cards = skillCard.map((card, i) => {
+        const cards = currentCountCard.map((card, i) => {
             if (i <= coutSkillCard) {
                 return (
 
@@ -96,9 +97,12 @@ const Skills = ({ currentLang, setLoading, isLoading }) => {
         )
     }
 
-    useEffect(() => {
-        setSkillCard([...cardData])
-    }, [])
+
+    const resetCardArrayBtn = () => {
+        setCoutSkillCard(3)
+        setCurrentCountCard([...cardData.filter((card, index) => index <= 3)])
+    }
+
 
     return (
         <div className="skills">
@@ -107,16 +111,17 @@ const Skills = ({ currentLang, setLoading, isLoading }) => {
                     <h2 className="skills__title">{title}</h2>
                     <h4 className="skills__info">{info}</h4>
                     {isLoading ? <Loading setLoading={setLoading} /> : cardsAll()}
-                    {coutSkillCard >= skillCard.length - 1
+                    {coutSkillCard >= cardData.length - 1
                         ? <div className="portfolio__end"
                             title={currentLang === "ru" ? "Нажмите для закрытия навыков" : "Click to close skills"}
-                            onClick={() => setCoutSkillCard(3)}>{currentLang === "ru" ? "Конец списка навыков" : "End of skill list"}</div> :
+                            onClick={() => resetCardArrayBtn()}>{currentLang === "ru" ? "Конец списка навыков" : "End of skill list"}</div> :
                         <LoadingButton
                             setText={currentLang === "ru" ? "Загрузить еще..." : "Loading more..."}
                             setClick={() => {
                                 return (
                                     setCoutSkillCard(count => count + 4),
-                                    setLoading(true)
+                                    setLoading(true),
+                                    setCurrentCountCard([...currentCountCard, ...cardData.filter((item, id) => id > coutSkillCard && id < coutSkillCard + 5)])
                                 )
                             }}
                         />}
