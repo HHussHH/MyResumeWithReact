@@ -17,6 +17,7 @@ import './App.css';
 function App() {
   const [lang, setLang] = useState("eng")
   const [menu, setMenu] = useState(false)
+  const [isLoading, setLoading] = useState(false)
   const RoutesData = [
     {
       page: <Home setLang={setLang} currentLang={lang} />,
@@ -27,7 +28,7 @@ function App() {
       link: "/about"
     },
     {
-      page: <SkillPage currentLang={lang} />,
+      page: <SkillPage currentLang={lang} setLoading={setLoading} isLoading={isLoading} />,
       link: "/skills"
     },
     {
@@ -60,6 +61,7 @@ function App() {
       <Router>
         <Header currentLang={lang} />
         < BurgerMenu setMenu={setMenu} menu={menu} />
+
         {createRoute()}
       </Router>
     </div>

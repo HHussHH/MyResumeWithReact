@@ -16,6 +16,7 @@ import FourStars from "../../img/cards/4starts.png"
 import FiveStars from "../../img/cards/5starts.png"
 import LoadingButton from "../loadingBtn/LoadingButton"
 import { useEffect, useState } from "react"
+import Loading from "../loading/Loading"
 
 const raitingData = [ThreeStars, FourStars, FiveStars]
 
@@ -67,7 +68,7 @@ const cardData = [
 ]
 
 
-const Skills = ({ currentLang }) => {
+const Skills = ({ currentLang, setLoading, isLoading }) => {
     const title = currentLang === "ru" ? "Навыки" : "Skills"
     const info = currentLang === "ru" ? "Работал с этими технологиями" : "I work in such programs as"
     const [skillCard, setSkillCard] = useState([])
@@ -78,6 +79,7 @@ const Skills = ({ currentLang }) => {
         const cards = skillCard.map((card, i) => {
             if (i <= coutSkillCard) {
                 return (
+
                     <div className="skills__card" key={i}>
                         <img className="skills__cards-img" src={card.img} alt={card.img} />
                         <h5 className="skills__cards-title">{card.title}</h5>
@@ -104,14 +106,20 @@ const Skills = ({ currentLang }) => {
                 <div className="skills__inner">
                     <h2 className="skills__title">{title}</h2>
                     <h4 className="skills__info">{info}</h4>
-                    {cardsAll()}
+                    {isLoading ? <Loading setLoading={setLoading} /> : cardsAll()}
                     {coutSkillCard >= skillCard.length - 1
                         ? <div className="portfolio__end"
                             title={currentLang === "ru" ? "Нажмите для закрытия навыков" : "Click to close skills"}
                             onClick={() => setCoutSkillCard(3)}>{currentLang === "ru" ? "Конец списка навыков" : "End of skill list"}</div> :
                         <LoadingButton
                             setText={currentLang === "ru" ? "Загрузить еще..." : "Loading more..."}
-                            setClick={() => setCoutSkillCard(count => count + 4)} />}
+                            setClick={() => {
+                                return (
+                                    setCoutSkillCard(count => count + 4),
+                                    setLoading(true)
+                                )
+                            }}
+                        />}
                 </div>
             </div>
         </div>

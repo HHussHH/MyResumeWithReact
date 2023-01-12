@@ -6,7 +6,7 @@ const LoadingButton = ({ setText, setClick }) => {
             className="loading__btn"
             onClick={setClick}>
             {setText}
-        </button>
+        </button >
     )
 }
 
